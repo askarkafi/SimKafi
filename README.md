@@ -50,5 +50,5 @@ void loop() { }
 
 ## مستندات
 
-- [مستندات فارسی](https://github.com/Askarkafi/SimKafi/docs/fa)
-- [Documentation in English](https://github.com/Askarkafi/SimKafi/docs/en)
+- [مستندات فارسی](https://askarkafi.github.io/SimKafi/fa)
+- [Documentation in English](https://askarkafi.github.io/SimKafi/en)
