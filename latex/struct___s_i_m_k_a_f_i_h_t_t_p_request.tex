@@ -1,0 +1,113 @@
+\doxysection{\+\_\+\+SIMKAFIHTTPRequest مرجع ساختار داده}
+\hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request}{}\label{struct___s_i_m_k_a_f_i_h_t_t_p_request}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+
+
+{\ttfamily \#include $<$Sim\+Kafi\+\_\+defs.\+h$>$}
+
+\doxysubsubsection*{خواص (متغييرهای) عمومی}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_af22ac95e827fdb2cbb0cdb9550c8c089}{method}}
+\begin{DoxyCompactList}\small\item\em The HTTP method for the request (e.\+g., GET, POST). \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_a8c9755e297cea709ee966858119f01ee}{data}}
+\begin{DoxyCompactList}\small\item\em The data to be included in the request (e.\+g., POST data). \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_a375bde804d9d4479301971cb13c915e4}{domain}}
+\begin{DoxyCompactList}\small\item\em The domain or server to which the request is sent. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_ab315e17fb7daa0cd22a1ec5988e52751}{resource}}
+\begin{DoxyCompactList}\small\item\em The resource or URL path to access on the server. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_a9b05d5f940320a4069909ee59d70d116}{status}}
+\begin{DoxyCompactList}\small\item\em The status of the HTTP request. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_a05afc31ea11e5dbcdfa56cc78afa63ac}{port}}
+\begin{DoxyCompactList}\small\item\em The port on which the server is listening (e.\+g., 80 for HTTP). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a29f591655f51aadc7898720dd93b93af}{SIMKAFIHTTPHeader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_a8f2bd904d53757208e8164d174c9fb67}{headers}}
+\begin{DoxyCompactList}\small\item\em An array of HTTP headers associated with the request. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct___s_i_m_k_a_f_i_h_t_t_p_request_a534f7116ed40eb3de5a862a74823e953}{header\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em The number of HTTP headers in the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{مستندات متغيير های عضو}
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_a8c9755e297cea709ee966858119f01ee}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!data@{data}}
+\index{data@{data}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_a8c9755e297cea709ee966858119f01ee} 
+String \+\_\+\+SIMKAFIHTTPRequest\+::data}
+
+
+
+The data to be included in the request (e.\+g., POST data). 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_a375bde804d9d4479301971cb13c915e4}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!domain@{domain}}
+\index{domain@{domain}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{domain}{domain}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_a375bde804d9d4479301971cb13c915e4} 
+String \+\_\+\+SIMKAFIHTTPRequest\+::domain}
+
+
+
+The domain or server to which the request is sent. 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_a534f7116ed40eb3de5a862a74823e953}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!header\_count@{header\_count}}
+\index{header\_count@{header\_count}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{header\_count}{header\_count}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_a534f7116ed40eb3de5a862a74823e953} 
+uint16\+\_\+t \+\_\+\+SIMKAFIHTTPRequest\+::header\+\_\+count}
+
+
+
+The number of HTTP headers in the array. 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_a8f2bd904d53757208e8164d174c9fb67}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!headers@{headers}}
+\index{headers@{headers}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{headers}{headers}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_a8f2bd904d53757208e8164d174c9fb67} 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a29f591655f51aadc7898720dd93b93af}{SIMKAFIHTTPHeader}}\texorpdfstring{$\ast$}{*} \+\_\+\+SIMKAFIHTTPRequest\+::headers}
+
+
+
+An array of HTTP headers associated with the request. 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_af22ac95e827fdb2cbb0cdb9550c8c089}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!method@{method}}
+\index{method@{method}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_af22ac95e827fdb2cbb0cdb9550c8c089} 
+String \+\_\+\+SIMKAFIHTTPRequest\+::method}
+
+
+
+The HTTP method for the request (e.\+g., GET, POST). 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_a05afc31ea11e5dbcdfa56cc78afa63ac}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!port@{port}}
+\index{port@{port}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_a05afc31ea11e5dbcdfa56cc78afa63ac} 
+uint16\+\_\+t \+\_\+\+SIMKAFIHTTPRequest\+::port}
+
+
+
+The port on which the server is listening (e.\+g., 80 for HTTP). 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_ab315e17fb7daa0cd22a1ec5988e52751}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!resource@{resource}}
+\index{resource@{resource}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{resource}{resource}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_ab315e17fb7daa0cd22a1ec5988e52751} 
+String \+\_\+\+SIMKAFIHTTPRequest\+::resource}
+
+
+
+The resource or URL path to access on the server. 
+
+\Hypertarget{struct___s_i_m_k_a_f_i_h_t_t_p_request_a9b05d5f940320a4069909ee59d70d116}\index{\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}!status@{status}}
+\index{status@{status}!\_SIMKAFIHTTPRequest@{\_SIMKAFIHTTPRequest}}
+\doxysubsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily \label{struct___s_i_m_k_a_f_i_h_t_t_p_request_a9b05d5f940320a4069909ee59d70d116} 
+uint8\+\_\+t \+\_\+\+SIMKAFIHTTPRequest\+::status}
+
+
+
+The status of the HTTP request. 
+
+
+
+مستندات اين ساختار داده از روی پرونده زير توليد شده است \+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_sim_kafi__defs_8h}{Sim\+Kafi\+\_\+defs.\+h}}\end{DoxyCompactItemize}

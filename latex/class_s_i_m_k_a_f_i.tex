@@ -1,0 +1,723 @@
+\doxysection{SIMKAFI مرجع کلاس}
+\hypertarget{class_s_i_m_k_a_f_i}{}\label{class_s_i_m_k_a_f_i}\index{SIMKAFI@{SIMKAFI}}
+
+
+A class for interfacing with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} GSM/\+GPRS module using Arduino and Software\+Serial.  
+
+
+
+
+{\ttfamily \#include $<$Sim\+Kafi.\+h$>$}
+
+\doxysubsubsection*{توابع عمومی عضو کلاس}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_i_m_k_a_f_i_ad4dc1ce9dd1f106060e2fa9e5c03a47b}{SIMKAFI}} (Stream \&\+\_\+sim\+Kafi)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a1c248f9ed14df0d6e1845376e7dced36}{handshake}} ()
+\begin{DoxyCompactList}\small\item\em Initialize communication with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module and perform a handshake. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_i_m_k_a_f_i_a0aaa99f748b77e311045452effa13dcd}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the communication with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a5012c8fa6137d8e7d0e3f90c46664fa3}{is\+Card\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Check if the SIM card is ready. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a3598f1ab90fc88bf8cc022eed2229f20}{change\+Card\+Pin}} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Change the PIN code of the SIM card. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_signal}{SIMKAFISignal}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_aa41aca98a6829b34659a4c5843967a01}{signal}} ()
+\begin{DoxyCompactList}\small\item\em Get the signal strength and bit error rate of the network connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a5232b5633dce888f46aa8913f8db7725}{SIMKAFIDial\+Result}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_a496daf702f70662c4d4d83008e034ec0}{dial\+Up}} (String number)
+\begin{DoxyCompactList}\small\item\em Initiate an outgoing call to a phone number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a5232b5633dce888f46aa8913f8db7725}{SIMKAFIDial\+Result}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_aa5b0d65650c08017ecef5400db5a11d3}{redial\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Redial the last outgoing call. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a5232b5633dce888f46aa8913f8db7725}{SIMKAFIDial\+Result}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_ae69ca8453156bc53bed575370983d849}{accept\+Incoming\+Call}} ()
+\begin{DoxyCompactList}\small\item\em Accept an incoming call. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a3cd5d34761816d7e3737cc32300d959f}{hang\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Hang up an active call. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a7cccefddfe9584257186d8c26ce0c3e8}{send\+SMS}} (String number, String message)
+\begin{DoxyCompactList}\small\item\em Send an SMS (Short Message Service). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a444c58620e14e91aa0ae1a8d8331b5ce}{connect\+APN}} (\mbox{\hyperlink{struct_s_i_m_k_a_f_i_a_p_n}{SIMKAFIAPN}} apn)
+\begin{DoxyCompactList}\small\item\em Connect to an Access Point Name (APN) for mobile data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a01c0272be2cced950b85f30bdb15554b}{enable\+GPRS}} ()
+\begin{DoxyCompactList}\small\item\em Enable the General Packet Radio Service (GPRS) for data communication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_h_t_t_p_response}{SIMKAFIHTTPResponse}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_adbd2c9e4e5cf5ad376c9a522c73c4f84}{request}} (\mbox{\hyperlink{struct_s_i_m_k_a_f_i_h_t_t_p_request}{SIMKAFIHTTPRequest}} request)
+\begin{DoxyCompactList}\small\item\em Send an HTTP request to a remote server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_operator}{SIMKAFIOperator}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_ad56aba80da71214ea538ae8f493d71a4}{network\+Operator}} ()
+\begin{DoxyCompactList}\small\item\em Get information about the current network operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_ab8a60c69b42ddcf8e1704dd236aee765}{card\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Get the SIM card number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_r_t_c}{SIMKAFIRTC}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_ad4604abcda3f4f9a3c0585226aa3a890}{rtc}} ()
+\begin{DoxyCompactList}\small\item\em Get the real-\/time clock (RTC) information. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a09f5e7897c91bc3282a14f0a4dde26d6}{update\+Rtc}} (\mbox{\hyperlink{struct_s_i_m_k_a_f_i_r_t_c}{SIMKAFIRTC}} config)
+\begin{DoxyCompactList}\small\item\em Update the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module\textquotesingle{}s real-\/time clock (RTC). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_af0e6a96dc9c9a7d08cff0cb01709684f}{save\+Phonebook}} (uint8\+\_\+t index, \mbox{\hyperlink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account}} account)
+\begin{DoxyCompactList}\small\item\em Save a contact in the SIM card\textquotesingle{}s phonebook. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_ad281ada8aea248a999c1c774c285a9ca}{delete\+Phonebook}} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Delete a contact from the SIM card\textquotesingle{}s phonebook. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_aedfdbdf8183adc07ecf795dcfe2bfde4}{retrieve\+Phonebook}} (uint8\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Retrieve a contact from the SIM card\textquotesingle{}s phonebook. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_phonebook_capacity}{SIMKAFIPhonebook\+Capacity}} \mbox{\hyperlink{class_s_i_m_k_a_f_i_a942ef5d4b5bce2724ae9670887cde4f9}{phonebook\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get information about the capacity of the SIM card\textquotesingle{}s phonebook. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_i_m_k_a_f_i_a6a24407777e33b465e688d732b837bf1}{manufacturer}} ()
+\begin{DoxyCompactList}\small\item\em Get the manufacturer name of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_i_m_k_a_f_i_a26af88023d7478b6d7e1109559e3504a}{software\+Release}} ()
+\begin{DoxyCompactList}\small\item\em Get the software release version of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_i_m_k_a_f_i_aa9d9d3013d97dfa8152e4e82ef13a2fe}{imei}} ()
+\begin{DoxyCompactList}\small\item\em Get the International Mobile Equipment Identity (IMEI) number of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_i_m_k_a_f_i_a1cbeb063b09d65f4610392310c3db65f}{chip\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Get the chip model of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_i_m_k_a_f_i_a1df7490085c8a04ede5448a863532e50}{chip\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the chip name of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_s_i_m_k_a_f_i_afb945748d3491e5bd80940393a62d197}{ip\+Address}} ()
+\begin{DoxyCompactList}\small\item\em Get the IP address assigned to the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_s_i_m_k_a_f_i_a571eff9976e98e57b5b6836849835883}{get\+SMSCount}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of SMS messages stored in the SIM card\textquotesingle{}s memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a545101bd5563854d8318fe05949fe87e}{read\+SMS}} (int index, String \&sender, String \&message)
+\begin{DoxyCompactList}\small\item\em Read a specific SMS from the SIM card\textquotesingle{}s memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a1a9da06c91f40d4518961a23777c8f0f}{delete\+SMS}} (int index)
+\begin{DoxyCompactList}\small\item\em Delete a specific SMS from the SIM card\textquotesingle{}s memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a9d0253cb91a88f4f760eca0ab777f3cd}{save\+Draft}} (String number, String message)
+\begin{DoxyCompactList}\small\item\em Save a draft SMS to the SIM card\textquotesingle{}s memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a3b42d127bf91ec347287b0e09940a053}{search\+SMS}} (String search\+Term, String \&result)
+\begin{DoxyCompactList}\small\item\em Search for an SMS containing a specific term. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_ae91f92ad638dbe1be26c00e8fe03de61}{delete\+All\+Read\+SMS}} ()
+\begin{DoxyCompactList}\small\item\em Delete all read SMS messages from the SIM card\textquotesingle{}s memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_adf192c1010f0f0b88bb74c1bfa5b36dd}{send\+Flash\+SMS}} (String number, String message)
+\begin{DoxyCompactList}\small\item\em Send a flash SMS to a specific phone number. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a3e103651c868bedf58fa0bc010836c7b}{enable\+Delivery\+Reports}} ()
+\begin{DoxyCompactList}\small\item\em Enable the delivery reports for sent SMS messages. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_s_i_m_k_a_f_i_aa0253c62d3c439ca00643ac7980b566f}{get\+Unread\+SMSCount}} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the count of unread SMS messages stored in the SIM card. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_s_i_m_k_a_f_i_a58777c389be88314ea6320323dbe121a}{read\+Unread\+SMS}} (int index, String \&sender, String \&message)
+\begin{DoxyCompactList}\small\item\em Read an unread SMS from the SIM card\textquotesingle{}s memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{توضيحات جزئی}
+A class for interfacing with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} GSM/\+GPRS module using Arduino and Software\+Serial. 
+
+This class provides a wide range of functionalities for working with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module, including sending and receiving calls, sending and receiving SMS, updating and extracting real-\/time clock data, sending HTTP requests, and retrieving various information about the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module\textquotesingle{}s status and the network it is connected to. 
+
+\doxysubsection{مستندات توباع آغازین و پایانی}
+\Hypertarget{class_s_i_m_k_a_f_i_ad4dc1ce9dd1f106060e2fa9e5c03a47b}\index{SIMKAFI@{SIMKAFI}!SIMKAFI@{SIMKAFI}}
+\index{SIMKAFI@{SIMKAFI}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{SIMKAFI()}{SIMKAFI()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ad4dc1ce9dd1f106060e2fa9e5c03a47b} 
+SIMKAFI\+::\+SIMKAFI (\begin{DoxyParamCaption}\item[{Stream \&}]{\+\_\+sim\+Kafi}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} class. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em \+\_\+sim\+Kafi} & A pointer to the Software\+Serial object for communication with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{توضيحات توابع عضو}
+\Hypertarget{class_s_i_m_k_a_f_i_ae69ca8453156bc53bed575370983d849}\index{SIMKAFI@{SIMKAFI}!acceptIncomingCall@{acceptIncomingCall}}
+\index{acceptIncomingCall@{acceptIncomingCall}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{acceptIncomingCall()}{acceptIncomingCall()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ae69ca8453156bc53bed575370983d849} 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a5232b5633dce888f46aa8913f8db7725}{SIMKAFIDial\+Result}} SIMKAFI\+::accept\+Incoming\+Call (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Accept an incoming call. 
+
+This function accepts an incoming call from another phone number.
+
+\begin{DoxyReturn}{خروجی}
+True if the call acceptance is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_ab8a60c69b42ddcf8e1704dd236aee765}\index{SIMKAFI@{SIMKAFI}!cardNumber@{cardNumber}}
+\index{cardNumber@{cardNumber}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{cardNumber()}{cardNumber()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ab8a60c69b42ddcf8e1704dd236aee765} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account}} SIMKAFI\+::card\+Number (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the SIM card number. 
+
+This function retrieves information about the SIM card, including the card\textquotesingle{}s name, number, type, speed, the type of phonebook where the number is stored, and the card service.
+
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account} structure containing SIM card information. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a3598f1ab90fc88bf8cc022eed2229f20}\index{SIMKAFI@{SIMKAFI}!changeCardPin@{changeCardPin}}
+\index{changeCardPin@{changeCardPin}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{changeCardPin()}{changeCardPin()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a3598f1ab90fc88bf8cc022eed2229f20} 
+bool SIMKAFI\+::change\+Card\+Pin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Change the PIN code of the SIM card. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em pin} & The new PIN code to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the PIN code change is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a1cbeb063b09d65f4610392310c3db65f}\index{SIMKAFI@{SIMKAFI}!chipModel@{chipModel}}
+\index{chipModel@{chipModel}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{chipModel()}{chipModel()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a1cbeb063b09d65f4610392310c3db65f} 
+String SIMKAFI\+::chip\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the chip model of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\begin{DoxyReturn}{خروجی}
+The chip model as a String. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a1df7490085c8a04ede5448a863532e50}\index{SIMKAFI@{SIMKAFI}!chipName@{chipName}}
+\index{chipName@{chipName}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{chipName()}{chipName()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a1df7490085c8a04ede5448a863532e50} 
+String SIMKAFI\+::chip\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the chip name of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\begin{DoxyReturn}{خروجی}
+The chip name as a String. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a0aaa99f748b77e311045452effa13dcd}\index{SIMKAFI@{SIMKAFI}!close@{close}}
+\index{close@{close}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a0aaa99f748b77e311045452effa13dcd} 
+void SIMKAFI\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Close the communication with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\Hypertarget{class_s_i_m_k_a_f_i_a444c58620e14e91aa0ae1a8d8331b5ce}\index{SIMKAFI@{SIMKAFI}!connectAPN@{connectAPN}}
+\index{connectAPN@{connectAPN}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{connectAPN()}{connectAPN()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a444c58620e14e91aa0ae1a8d8331b5ce} 
+bool SIMKAFI\+::connect\+APN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_i_m_k_a_f_i_a_p_n}{SIMKAFIAPN}}}]{apn}{}\end{DoxyParamCaption})}
+
+
+
+Connect to an Access Point Name (APN) for mobile data. 
+
+This function establishes a connection to an APN, enabling mobile data connectivity.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em apn} & An instance of the \doxylink{struct_s_i_m_k_a_f_i_a_p_n}{SIMKAFIAPN} structure containing APN, username, and password information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the APN connection is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_ae91f92ad638dbe1be26c00e8fe03de61}\index{SIMKAFI@{SIMKAFI}!deleteAllReadSMS@{deleteAllReadSMS}}
+\index{deleteAllReadSMS@{deleteAllReadSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{deleteAllReadSMS()}{deleteAllReadSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ae91f92ad638dbe1be26c00e8fe03de61} 
+bool SIMKAFI\+::delete\+All\+Read\+SMS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Delete all read SMS messages from the SIM card\textquotesingle{}s memory. 
+
+\begin{DoxyReturn}{خروجی}
+True if all read SMS messages are deleted successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_ad281ada8aea248a999c1c774c285a9ca}\index{SIMKAFI@{SIMKAFI}!deletePhonebook@{deletePhonebook}}
+\index{deletePhonebook@{deletePhonebook}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{deletePhonebook()}{deletePhonebook()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ad281ada8aea248a999c1c774c285a9ca} 
+bool SIMKAFI\+::delete\+Phonebook (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Delete a contact from the SIM card\textquotesingle{}s phonebook. 
+
+This function deletes a contact entry from the SIM card\textquotesingle{}s phonebook at the specified index.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em index} & The index of the contact entry to delete. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the contact is successfully deleted, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a1a9da06c91f40d4518961a23777c8f0f}\index{SIMKAFI@{SIMKAFI}!deleteSMS@{deleteSMS}}
+\index{deleteSMS@{deleteSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{deleteSMS()}{deleteSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a1a9da06c91f40d4518961a23777c8f0f} 
+bool SIMKAFI\+::delete\+SMS (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Delete a specific SMS from the SIM card\textquotesingle{}s memory. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em index} & The index of the SMS to delete (starting from 1). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the SMS is deleted successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a496daf702f70662c4d4d83008e034ec0}\index{SIMKAFI@{SIMKAFI}!dialUp@{dialUp}}
+\index{dialUp@{dialUp}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{dialUp()}{dialUp()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a496daf702f70662c4d4d83008e034ec0} 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a5232b5633dce888f46aa8913f8db7725}{SIMKAFIDial\+Result}} SIMKAFI\+::dial\+Up (\begin{DoxyParamCaption}\item[{String}]{number}{}\end{DoxyParamCaption})}
+
+
+
+Initiate an outgoing call to a phone number. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em number} & The phone number to call. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+The result of the dialing operation, as a SIMKAFIDial\+Result. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a3e103651c868bedf58fa0bc010836c7b}\index{SIMKAFI@{SIMKAFI}!enableDeliveryReports@{enableDeliveryReports}}
+\index{enableDeliveryReports@{enableDeliveryReports}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{enableDeliveryReports()}{enableDeliveryReports()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a3e103651c868bedf58fa0bc010836c7b} 
+bool SIMKAFI\+::enable\+Delivery\+Reports (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Enable the delivery reports for sent SMS messages. 
+
+\begin{DoxyReturn}{خروجی}
+True if delivery reports are enabled successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a01c0272be2cced950b85f30bdb15554b}\index{SIMKAFI@{SIMKAFI}!enableGPRS@{enableGPRS}}
+\index{enableGPRS@{enableGPRS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{enableGPRS()}{enableGPRS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a01c0272be2cced950b85f30bdb15554b} 
+bool SIMKAFI\+::enable\+GPRS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Enable the General Packet Radio Service (GPRS) for data communication. 
+
+This function enables GPRS for data transmission over the mobile network.
+
+\begin{DoxyReturn}{خروجی}
+True if GPRS is successfully enabled, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a571eff9976e98e57b5b6836849835883}\index{SIMKAFI@{SIMKAFI}!getSMSCount@{getSMSCount}}
+\index{getSMSCount@{getSMSCount}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{getSMSCount()}{getSMSCount()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a571eff9976e98e57b5b6836849835883} 
+int SIMKAFI\+::get\+SMSCount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the number of SMS messages stored in the SIM card\textquotesingle{}s memory. 
+
+\begin{DoxyReturn}{خروجی}
+The number of SMS messages stored, or -\/1 if the command fails. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_aa0253c62d3c439ca00643ac7980b566f}\index{SIMKAFI@{SIMKAFI}!getUnreadSMSCount@{getUnreadSMSCount}}
+\index{getUnreadSMSCount@{getUnreadSMSCount}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{getUnreadSMSCount()}{getUnreadSMSCount()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_aa0253c62d3c439ca00643ac7980b566f} 
+int SIMKAFI\+::get\+Unread\+SMSCount (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve the count of unread SMS messages stored in the SIM card. 
+
+\begin{DoxyReturn}{خروجی}
+The number of unread SMS messages stored in the SIM card. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a1c248f9ed14df0d6e1845376e7dced36}\index{SIMKAFI@{SIMKAFI}!handshake@{handshake}}
+\index{handshake@{handshake}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{handshake()}{handshake()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a1c248f9ed14df0d6e1845376e7dced36} 
+bool SIMKAFI\+::handshake (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize communication with the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module and perform a handshake. 
+
+\begin{DoxyReturn}{خروجی}
+True if the handshake is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a3cd5d34761816d7e3737cc32300d959f}\index{SIMKAFI@{SIMKAFI}!hangUp@{hangUp}}
+\index{hangUp@{hangUp}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{hangUp()}{hangUp()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a3cd5d34761816d7e3737cc32300d959f} 
+bool SIMKAFI\+::hang\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Hang up an active call. 
+
+This function terminates an ongoing call.
+
+\begin{DoxyReturn}{خروجی}
+True if the call is successfully terminated, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_aa9d9d3013d97dfa8152e4e82ef13a2fe}\index{SIMKAFI@{SIMKAFI}!imei@{imei}}
+\index{imei@{imei}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{imei()}{imei()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_aa9d9d3013d97dfa8152e4e82ef13a2fe} 
+String SIMKAFI\+::imei (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the International Mobile Equipment Identity (IMEI) number of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\begin{DoxyReturn}{خروجی}
+The IMEI number as a String. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_afb945748d3491e5bd80940393a62d197}\index{SIMKAFI@{SIMKAFI}!ipAddress@{ipAddress}}
+\index{ipAddress@{ipAddress}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{ipAddress()}{ipAddress()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_afb945748d3491e5bd80940393a62d197} 
+String SIMKAFI\+::ip\+Address (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the IP address assigned to the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\begin{DoxyReturn}{خروجی}
+The assigned IP address as a String. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a5012c8fa6137d8e7d0e3f90c46664fa3}\index{SIMKAFI@{SIMKAFI}!isCardReady@{isCardReady}}
+\index{isCardReady@{isCardReady}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{isCardReady()}{isCardReady()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a5012c8fa6137d8e7d0e3f90c46664fa3} 
+bool SIMKAFI\+::is\+Card\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the SIM card is ready. 
+
+\begin{DoxyReturn}{خروجی}
+True if the SIM card is ready, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a6a24407777e33b465e688d732b837bf1}\index{SIMKAFI@{SIMKAFI}!manufacturer@{manufacturer}}
+\index{manufacturer@{manufacturer}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{manufacturer()}{manufacturer()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a6a24407777e33b465e688d732b837bf1} 
+String SIMKAFI\+::manufacturer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the manufacturer name of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\begin{DoxyReturn}{خروجی}
+The manufacturer name as a String. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_ad56aba80da71214ea538ae8f493d71a4}\index{SIMKAFI@{SIMKAFI}!networkOperator@{networkOperator}}
+\index{networkOperator@{networkOperator}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{networkOperator()}{networkOperator()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ad56aba80da71214ea538ae8f493d71a4} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_operator}{SIMKAFIOperator}} SIMKAFI\+::network\+Operator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get information about the current network operator. 
+
+This function retrieves information about the mobile network operator, including its operating mode, format, and name.
+
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_operator}{SIMKAFIOperator} structure containing network operator information. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a942ef5d4b5bce2724ae9670887cde4f9}\index{SIMKAFI@{SIMKAFI}!phonebookCapacity@{phonebookCapacity}}
+\index{phonebookCapacity@{phonebookCapacity}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{phonebookCapacity()}{phonebookCapacity()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a942ef5d4b5bce2724ae9670887cde4f9} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_phonebook_capacity}{SIMKAFIPhonebook\+Capacity}} SIMKAFI\+::phonebook\+Capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get information about the capacity of the SIM card\textquotesingle{}s phonebook. 
+
+This function provides information about the capacity of the SIM card\textquotesingle{}s phonebook memory type, including the memory type, used entries, and the maximum number of entries.
+
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_phonebook_capacity}{SIMKAFIPhonebook\+Capacity} structure containing phonebook capacity information. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a545101bd5563854d8318fe05949fe87e}\index{SIMKAFI@{SIMKAFI}!readSMS@{readSMS}}
+\index{readSMS@{readSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{readSMS()}{readSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a545101bd5563854d8318fe05949fe87e} 
+bool SIMKAFI\+::read\+SMS (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{String \&}]{sender}{, }\item[{String \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Read a specific SMS from the SIM card\textquotesingle{}s memory. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em index} & The index of the SMS to read (starting from 1). \\
+\hline
+{\em sender} & The phone number of the SMS sender (output). \\
+\hline
+{\em message} & The content of the SMS (output). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the SMS is read successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a58777c389be88314ea6320323dbe121a}\index{SIMKAFI@{SIMKAFI}!readUnreadSMS@{readUnreadSMS}}
+\index{readUnreadSMS@{readUnreadSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{readUnreadSMS()}{readUnreadSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a58777c389be88314ea6320323dbe121a} 
+bool SIMKAFI\+::read\+Unread\+SMS (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{String \&}]{sender}{, }\item[{String \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Read an unread SMS from the SIM card\textquotesingle{}s memory. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em index} & The index of the unread SMS to read (starting from 1). \\
+\hline
+{\em sender} & The phone number of the sender. \\
+\hline
+{\em message} & The content of the SMS message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the unread SMS is read successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_aa5b0d65650c08017ecef5400db5a11d3}\index{SIMKAFI@{SIMKAFI}!redialUp@{redialUp}}
+\index{redialUp@{redialUp}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{redialUp()}{redialUp()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_aa5b0d65650c08017ecef5400db5a11d3} 
+\mbox{\hyperlink{_sim_kafi__defs_8h_a5232b5633dce888f46aa8913f8db7725}{SIMKAFIDial\+Result}} SIMKAFI\+::redial\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Redial the last outgoing call. 
+
+This function redials the last outgoing call to the same phone number.
+
+\begin{DoxyReturn}{خروجی}
+The result of the redialing operation, as a SIMKAFIDial\+Result. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_adbd2c9e4e5cf5ad376c9a522c73c4f84}\index{SIMKAFI@{SIMKAFI}!request@{request}}
+\index{request@{request}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_adbd2c9e4e5cf5ad376c9a522c73c4f84} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_h_t_t_p_response}{SIMKAFIHTTPResponse}} SIMKAFI\+::request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_i_m_k_a_f_i_h_t_t_p_request}{SIMKAFIHTTPRequest}}}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Send an HTTP request to a remote server. 
+
+This function sends an HTTP request to a specified server with the provided request parameters.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em request} & An instance of the \doxylink{struct_s_i_m_k_a_f_i_h_t_t_p_request}{SIMKAFIHTTPRequest} structure representing the HTTP request. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_h_t_t_p_response}{SIMKAFIHTTPResponse} structure containing the HTTP response from the server. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_aedfdbdf8183adc07ecf795dcfe2bfde4}\index{SIMKAFI@{SIMKAFI}!retrievePhonebook@{retrievePhonebook}}
+\index{retrievePhonebook@{retrievePhonebook}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{retrievePhonebook()}{retrievePhonebook()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_aedfdbdf8183adc07ecf795dcfe2bfde4} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account}} SIMKAFI\+::retrieve\+Phonebook (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Retrieve a contact from the SIM card\textquotesingle{}s phonebook. 
+
+This function retrieves a contact entry from the SIM card\textquotesingle{}s phonebook at the specified index.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em index} & The index of the contact entry to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account} structure containing the contact\textquotesingle{}s information. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_ad4604abcda3f4f9a3c0585226aa3a890}\index{SIMKAFI@{SIMKAFI}!rtc@{rtc}}
+\index{rtc@{rtc}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{rtc()}{rtc()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_ad4604abcda3f4f9a3c0585226aa3a890} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_r_t_c}{SIMKAFIRTC}} SIMKAFI\+::rtc (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the real-\/time clock (RTC) information. 
+
+This function retrieves the current date and time from the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module, including day, month, year, hour, minute, second, and the GMT offset.
+
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_r_t_c}{SIMKAFIRTC} structure containing RTC information. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a9d0253cb91a88f4f760eca0ab777f3cd}\index{SIMKAFI@{SIMKAFI}!saveDraft@{saveDraft}}
+\index{saveDraft@{saveDraft}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{saveDraft()}{saveDraft()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a9d0253cb91a88f4f760eca0ab777f3cd} 
+bool SIMKAFI\+::save\+Draft (\begin{DoxyParamCaption}\item[{String}]{number}{, }\item[{String}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Save a draft SMS to the SIM card\textquotesingle{}s memory. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em number} & The recipient\textquotesingle{}s phone number. \\
+\hline
+{\em message} & The content of the SMS to save as a draft. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the draft is saved successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_af0e6a96dc9c9a7d08cff0cb01709684f}\index{SIMKAFI@{SIMKAFI}!savePhonebook@{savePhonebook}}
+\index{savePhonebook@{savePhonebook}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{savePhonebook()}{savePhonebook()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_af0e6a96dc9c9a7d08cff0cb01709684f} 
+bool SIMKAFI\+::save\+Phonebook (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index}{, }\item[{\mbox{\hyperlink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account}}}]{account}{}\end{DoxyParamCaption})}
+
+
+
+Save a contact in the SIM card\textquotesingle{}s phonebook. 
+
+This function saves a contact entry in the SIM card\textquotesingle{}s phonebook at the specified index.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em index} & The index at which to save the contact entry. \\
+\hline
+{\em account} & An instance of the \doxylink{struct_s_i_m_k_a_f_i_card_account}{SIMKAFICard\+Account} structure containing the contact\textquotesingle{}s information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the contact is successfully saved, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a3b42d127bf91ec347287b0e09940a053}\index{SIMKAFI@{SIMKAFI}!searchSMS@{searchSMS}}
+\index{searchSMS@{searchSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{searchSMS()}{searchSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a3b42d127bf91ec347287b0e09940a053} 
+bool SIMKAFI\+::search\+SMS (\begin{DoxyParamCaption}\item[{String}]{search\+Term}{, }\item[{String \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Search for an SMS containing a specific term. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em search\+Term} & The term to search for in the SMS messages. \\
+\hline
+{\em result} & The content of the SMS message found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if an SMS containing the search term is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_adf192c1010f0f0b88bb74c1bfa5b36dd}\index{SIMKAFI@{SIMKAFI}!sendFlashSMS@{sendFlashSMS}}
+\index{sendFlashSMS@{sendFlashSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{sendFlashSMS()}{sendFlashSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_adf192c1010f0f0b88bb74c1bfa5b36dd} 
+bool SIMKAFI\+::send\+Flash\+SMS (\begin{DoxyParamCaption}\item[{String}]{number}{, }\item[{String}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Send a flash SMS to a specific phone number. 
+
+
+\begin{DoxyParams}{پارامترها}
+{\em number} & The recipient\textquotesingle{}s phone number. \\
+\hline
+{\em message} & The content of the SMS message to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the flash SMS is sent successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a7cccefddfe9584257186d8c26ce0c3e8}\index{SIMKAFI@{SIMKAFI}!sendSMS@{sendSMS}}
+\index{sendSMS@{sendSMS}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{sendSMS()}{sendSMS()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a7cccefddfe9584257186d8c26ce0c3e8} 
+bool SIMKAFI\+::send\+SMS (\begin{DoxyParamCaption}\item[{String}]{number}{, }\item[{String}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Send an SMS (Short Message Service). 
+
+This function sends an SMS message to a specified phone number.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em number} & The recipient\textquotesingle{}s phone number. \\
+\hline
+{\em message} & The SMS message content. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the SMS is successfully sent, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_aa41aca98a6829b34659a4c5843967a01}\index{SIMKAFI@{SIMKAFI}!signal@{signal}}
+\index{signal@{signal}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{signal()}{signal()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_aa41aca98a6829b34659a4c5843967a01} 
+\mbox{\hyperlink{struct_s_i_m_k_a_f_i_signal}{SIMKAFISignal}} SIMKAFI\+::signal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the signal strength and bit error rate of the network connection. 
+
+\begin{DoxyReturn}{خروجی}
+A \doxylink{struct_s_i_m_k_a_f_i_signal}{SIMKAFISignal} structure containing signal strength and bit error rate information. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a26af88023d7478b6d7e1109559e3504a}\index{SIMKAFI@{SIMKAFI}!softwareRelease@{softwareRelease}}
+\index{softwareRelease@{softwareRelease}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{softwareRelease()}{softwareRelease()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a26af88023d7478b6d7e1109559e3504a} 
+String SIMKAFI\+::software\+Release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the software release version of the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module. 
+
+\begin{DoxyReturn}{خروجی}
+The software release version as a String. 
+\end{DoxyReturn}
+\Hypertarget{class_s_i_m_k_a_f_i_a09f5e7897c91bc3282a14f0a4dde26d6}\index{SIMKAFI@{SIMKAFI}!updateRtc@{updateRtc}}
+\index{updateRtc@{updateRtc}!SIMKAFI@{SIMKAFI}}
+\doxysubsubsection{\texorpdfstring{updateRtc()}{updateRtc()}}
+{\footnotesize\ttfamily \label{class_s_i_m_k_a_f_i_a09f5e7897c91bc3282a14f0a4dde26d6} 
+bool SIMKAFI\+::update\+Rtc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_i_m_k_a_f_i_r_t_c}{SIMKAFIRTC}}}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Update the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module\textquotesingle{}s real-\/time clock (RTC). 
+
+This function allows you to configure the \doxylink{class_s_i_m_k_a_f_i}{SIMKAFI} module\textquotesingle{}s RTC with a new date, time, and GMT offset.
+
+
+\begin{DoxyParams}{پارامترها}
+{\em config} & An instance of the \doxylink{struct_s_i_m_k_a_f_i_r_t_c}{SIMKAFIRTC} structure containing the new RTC configuration. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{خروجی}
+True if the RTC update is successful, false otherwise. 
+\end{DoxyReturn}
+
+
+مستندات اين کلاس از روی پرونده های زير توليد شده است \+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_sim_kafi_8h}{Sim\+Kafi.\+h}}\item 
+src/\mbox{\hyperlink{_sim_kafi_8cpp}{Sim\+Kafi.\+cpp}}\end{DoxyCompactItemize}

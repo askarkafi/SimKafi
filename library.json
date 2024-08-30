@@ -1,0 +1,41 @@
+{
+    "name": "SimKafi",
+    "version": "1.1.0",
+    "description": "Arduino SIM900 Comprehensive Library",
+	"keywords": [
+		"SIM900", 
+		"Communication", 
+		"ارتباط", 
+		"مدیریت تماس", 
+		"پیامک", 
+		"فارسی"
+	]
+    "authors": [{
+            "name": "Askarkafi",
+            "email": "Askarkafi@gmail.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Askarkafi"
+    },
+    "platforms": [
+        "espressif8266",
+        "espressif32",
+        "atmelavr",
+        "stm32",
+        "teensy",
+        "timsp430",
+        "nordicnrf51",
+        "nordicnrf52",
+        "microchippic32",
+        "ambiot",
+        "espressif8266",
+        "espressif32"
+    ],
+    "frameworks": ["arduino"],
+    "dependencies": [{
+            "name": "SoftwareSerial"
+        }
+    ]
+}
