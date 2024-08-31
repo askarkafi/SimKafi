@@ -529,7 +529,7 @@ bool SIMKAFI::sendFlashSMS(String number, String message) {
 }
 
 bool SIMKAFI::enableDeliveryReports() {
-    this->sendCommand(F("AT+CSMP=49,167,0,1"));  // فعال‌سازی گزارش تحویل
+    this->sendCommand(F("AT+CSMP=49,167,0,1"));  // فعالسازی گزارش تحویل
     return this->isSuccessCommand();
 }
 
@@ -550,4 +550,71 @@ bool SIMKAFI::readUnreadSMS(int index, String& sender, String& message) {
     return this->readSMS(index, sender, message);
 }
 
+bool SIMKAFI::sendCNMICommand(int mode, int mt, int bm, int ds, int bfr) {
+    String command = "AT+CNMI=" + String(mode) + "," + String(mt) + "," + String(bm) + "," + String(ds) + "," + String(bfr);
+    
+	this->sendCommand(command);
+    
+    return this->isSuccessCommand();
+}
 
+void SIMKAFI::setSMSReceivedCallback(void (*callback)(String, String)) {
+    onSMSReceived = callback;
+}
+
+void SIMKAFI::setCallReceivedCallback(void (*callback)()) {
+    onCallReceived = callback;
+}
+
+void SIMKAFI::setSMSDeliveredCallback(void (*callback)()) {
+    onSMSDelivered = callback;
+}
+
+int SIMKAFI::parseIndexFromResponse(String response) {
+    int indexStart = response.indexOf(',') + 1;
+    return response.substring(indexStart).toInt();
+}
+
+void SIMKAFI::handleSerialEvent() {
+    if (simKafi.available()) {
+        String response = getResponse();  // دریافت پاسخ از ماژول
+
+        if (response.indexOf("+CMTI:") != -1) {
+            int index = parseIndexFromResponse(response);
+            String sender, message;
+            if (readSMS(index, sender, message)) {
+                 if (onSMSReceived != nullptr) {
+					onSMSReceived(sender, message);
+				}
+            }
+        } 
+        else if (response.indexOf("RING") != -1) {
+            if (onCallReceived != nullptr) {
+                onCallReceived();
+            }
+        }
+        else if (response.indexOf("+CSQ:") != -1) {
+            // وضعیت شبکه یا سیگنال
+            SIMKAFISignal sig = signal();
+            // پردازش وضعیت سیگنال
+        }
+        else if (response.indexOf("+CDS:") != -1) {
+            if (onSMSDelivered != nullptr) {
+                onSMSDelivered();
+            }
+        }
+        else if (response.indexOf("OK") != -1) {
+            // پاسخ مثبت به AT Command
+            // اقدامات لازم
+        }
+        else if (response.indexOf("ERROR") != -1) {
+            // پاسخ خطا به AT Command
+            // اقدامات لازم
+        }
+        else if (response.indexOf("+CGATT:") != -1) {
+            // وضعیت GPRS
+            // پردازش وضعیت GPRS
+        }
+        // دیگر رویدادهای احتمالی
+    }
+}

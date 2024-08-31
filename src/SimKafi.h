@@ -43,6 +43,11 @@ private:
     /// The SoftwareSerial object used for communication with the SIMKAFI module.
     Stream& simKafi;
 
+	// اشارهگرهای تابع برای کالبکها
+    void (*onSMSReceived)(String sender, String message) = nullptr;
+    void (*onCallReceived)() = nullptr;
+	void (*onSMSDelivered)() = nullptr;
+	
     /// A flag indicating whether Access Point Name (APN) configuration is set.
     bool hasAPN = false;
 
@@ -66,6 +71,8 @@ private:
 
     /// Retrieve the result of a query operation.
     String queryResult();
+	
+	int parseIndexFromResponse(String response);
 
 public:
     /**
@@ -76,6 +83,45 @@ public:
      * 
      */
     SIMKAFI(Stream& _simKafi);
+	
+	// متدها برای تنظیم کالبکها
+    void setSMSReceivedCallback(void (*callback)(String, String));
+    void setCallReceivedCallback(void (*callback)());
+	void setSMSDeliveredCallback(void (*callback)());
+
+    // متد برای پردازش رویدادها
+    void handleSerialEvent();
+	
+	/**
+	 * @brief Sends the AT+CNMI command to configure the SMS message indications.
+	 * 
+	 * This function allows you to configure how the module will notify the microcontroller
+	 * when an SMS message is received. It uses the AT+CNMI command to set the notification mode,
+	 * message type, broadcast messages, delivery reports, and buffer storage.
+	 * 
+	 * @param mode Specifies the mode of SMS message indication. 
+	 *        - 0: Buffer unread messages and do not notify the terminal.
+	 *        - 1: Notify the terminal of new messages by sending a notification.
+	 *        - 2: Directly forward received messages to the terminal.
+	 * @param mt Specifies the type of messages to be forwarded to the terminal.
+	 *        - 0: No message indications are forwarded.
+	 *        - 1: Class 1 messages are forwarded.
+	 *        - 2: Class 2 messages are forwarded.
+	 * @param bm Specifies the handling of cell broadcast messages.
+	 *        - Typically set to 0 to disable.
+	 * @param ds Specifies the delivery reports for SMS.
+	 *        - 0: Delivery reports are disabled.
+	 *        - 1: Delivery reports are enabled.
+	 * @param bfr Specifies the storage of messages in the buffer.
+	 *        - 0: Disable buffer storage.
+	 *        - 1: Enable buffer storage.
+	 * 
+	 * @return Returns true if the command was successfully executed and acknowledged with "OK". 
+	 *         Returns false if there was an error or no response was received within the timeout period.
+	 */
+	bool sendCNMICommand(int mode, int mt, int bm, int ds, int bfr);
+
+
 
     /**
      * 
