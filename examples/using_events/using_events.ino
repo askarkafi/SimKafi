@@ -13,6 +13,7 @@ void setup() {
     delay(2000);
     
     SimKafi.sendCNMICommand(2,1,0,0,0);//"AT+CNMI=2,1,0,0,0"
+    SimKafi.enableDeliveryReports();
     // تنظیم کال‌بک‌ها
     SimKafi.setSMSReceivedCallback(onSMSReceived);
     SimKafi.setCallReceivedCallback(onCallReceived);
@@ -24,13 +25,11 @@ void setup() {
          : "Not sent.");
 }
 
-void loop() {}
-
-void serialEvent() {
-        // پردازش رویدادهای سریال
-    SimKafi.handleSerialEvent();
+void loop() {
+    if (SIM900Serial.available()) {
+        SimKafi.handleSerialEvent();
+    }
 }
-
 
 // تعریف کال‌بک برای دریافت پیامک
 void onSMSReceived(String sender, String message) {
