@@ -196,6 +196,7 @@ bool SIMKAFI::hangUp() {
 }
 
 bool SIMKAFI::sendSMS(String number, String message) {
+	
     this->handshake();
 
     this->sendCommand(F("AT+CMGF=1"));
@@ -526,6 +527,8 @@ bool SIMKAFI::deleteAllReadSMS() {
 bool SIMKAFI::sendFlashSMS(String number, String message) {
     this->sendCommand(F("AT+CSMP=49,167,0,240"));  // تنظیم برای ارسال فلش پیامک
     return this->sendSMS(number, message);
+	//this->sendCommand(F("AT+CSMP"));
+	this->sendCommand(F("AT+CSMP=49,167,0,0"));
 }
 
 bool SIMKAFI::enableDeliveryReports() {
