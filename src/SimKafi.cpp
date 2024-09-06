@@ -518,6 +518,12 @@ bool SIMKAFI::searchSMS(String searchTerm, String& result) {
     return false;
 }
 
+bool SIMKAFI::deleteAllSMS() {
+	int count=this->getSMSCount();
+	for(int index=count;index>0;index--)
+		this->sendCommand("AT+CMGD=" + String(index));
+    return this->isSuccessCommand();
+}
 
 bool SIMKAFI::deleteAllReadSMS() {
     this->sendCommand(F("AT+CMGDA=\"DEL READ\""));

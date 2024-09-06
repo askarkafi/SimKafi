@@ -457,6 +457,14 @@ public:
 	 * @return True if all read SMS messages are deleted successfully, false otherwise.
 	 */
 	bool deleteAllReadSMS();
+	
+	/**
+	 * @brief Delete all SMS messages from the SIM card's memory.
+	 *
+	 * @return True if all read SMS messages are deleted successfully, false otherwise.
+	 */
+	bool deleteAllSMS();
+	
 
 	/**
 	 * @brief Send a flash SMS to a specific phone number.
